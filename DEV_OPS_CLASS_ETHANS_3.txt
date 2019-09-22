@@ -1,0 +1,91 @@
+key : my_key
+
+region means - geographical location
+availability zone - physical data
+
+go to ec2 >> create instance >> download the key pair >> then go to putty gen >> load the key .pem >> save the private key >> it will be created as a .ppk file     
+
+we need this ppk file to use the instance from windows os.
+
+go to putty>> expand ssh >> click auth >> brows ppk key >> open
+console
+login : ec2-user
+no paswrd required as key is present
+
+ubuntu : default user is : ubuntu
+
+#each time putty is opened , key needs to be uploaded everytime.
+
+$ sudo su -    
+or
+$ sudo yum update
+
+after sudo su -
+# sum update
+
+# screen which appears appears on instance creation are know as template ot AMI(Amamzon machine Image)
+also we can create our own AMI
+
+*************************
+assignment
+How to create new AMI and install java.
+*********************************
+
+LAB
+install apache (nginix, apache are web servers)
+
+yum update
+yum install httpd
+service https start
+
+
+nginx, apache(httpd), IIS = web server
+
+tomcat = app server
+
+security groups: they are virtual firewall rules. combination of inbound(incoming traffic) and outbound rules(outgoing traffic), and it can be applied at EC2's instance level.
+
+inbound													outbound
+
+statefull nature							
+port=80 (by default same
+rule will be applicable 
+for outbound as well)
+but viceversa is not true.
+
+*****************************************
+
+go to instance.. scroll down .. click security group.. inbound instance
+
+********************************
+
+high availability can be done using load balancer. it equally balances the load accross target instances.
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

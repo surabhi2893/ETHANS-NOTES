@@ -1,0 +1,110 @@
+s3, bucket creation, uploading the data in it, obj uploading, and go to next> next> we can find these all options there.
+
+S3 storage class
+****************
+ex: resume is frequestly used, where in marksheet is less used.
+
+1: Standard storage class
+		: we can store frequently accessed data, whose retrival rate and cost is high, retrival time is less.
+		2.durability is also high : means chances of data loss is less (99.99999999999) upto 11 times.
+		3.availability should be high (99.99%)
+		
+2. Infrequent accessed storage class
+		ex: marksheet, logs
+		retrival time is normal
+		cost is bit low that frequently used data
+		durabitlity and availability is similar to stnd storage class.
+		
+3. Glacier :
+		this is used for backup and archive ex: emails, logs, company audit logs, details of emp, bank details etc
+		retrival time is very high approx 1 hour (late), more than 5 yrs data.
+		cost is less
+		durab and availability is same as above.		
+		in glacier we keep 3 copies of the objects.
+		
+4. Glacier deep drive :
+		RT is very high 6 hours more than 10 yrs data
+		cost is quite less
+		rest all features are same.
+		
+5. Intelligent tier :
+		It will intelligently move the data as per we access the data.
+		movement will take place only between stand and infrequest ASC.
+		there will no cost for movement of data.		
+
+6. One-zone IA :
+		data will be stored in only one availability zone.
+		ex: 1a and 1b supose a zone in mumbai, so they will have high bandwidth and low latency. for DR and HA purpose.
+		in one zone availability is less as data is not available all the time, means we can store only non critical data.
+		very less cost.
+		
+*****************************************************************************************************************************
+
+Life Cycle Rules:
+
+stnd >> IA >> Glacier >> Deep >> One-zone >> intelligently
+based on the rules it will keep on moving data from all the levels.
+
+ex: old employee's data.
+
+****************************************************************************************************************************
+
+version:
+
+			we can store varients is file: file 1 : old
+											2nd latest
+											3rd latest
+					
+		issues in cersioning in aws : less customization
+									   less features	
+									   lengthy process
+									if we want to go back to the previous version then use : reset/revert command
+					however in git version control is done more properly, and it is more customized.
+	AWS versioning can be used for docs.
+
+**********************************************************************
+					
+Assignment:
+create
+index.html, and error.html
+hi               hi this is not available
+
+upload both the files in bucket > bucket properties> static website > upload both the files.
+
+S# is a global service
+
+2. How DNS works. 
+					
+***********************************************************
+
+EC2 is a regional service.
+
+
+
+
+					
+					
+					
+			
+	
+		
+		
+
+		
+	
+
+		
+		
+		
+
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		

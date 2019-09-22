@@ -1,0 +1,93 @@
+#deployment model
+1. public cloud -  - aws azure, GCP
+private - vcloud rackspace etc , openstack
+hybrid - pub + private , on premise
+community - combination of 2-3 companies ex: tata groups
+
+#service Model
+
+1.iaas
+paas
+saas
+
+
+AWS
+
+IAM : identity access managemnt
+
+Access key and secret key
+#when we want to use aws cli, docker, kubernats, ANsible, aws sdk, TerraForm
+
+When we want to use console user AWS management console access
+
+for devops , we need admin access 
+
+check Mandix
+************
+
+automate infra - ansible and terraform
+automate config - ansible
+monitor control : nagios
+version control : git,gihub
+integrate and deploed : jenkins , maven
+run application and microservices: docker, pods, cloud VM
+manage docker : kubernets, docker swarms
+monitor kubernets based env : prometheus
+automate: shell script
+
+s3 - simple storage service
+
+EC2 elastic compute cloud (VM or instance)
+Lambda (all) - server less computing
+s3 (specific bucket read) - simple storage service - object storage service.
+VPc (Modify rights) -- virtual private cloud.
+
+s3- object is : binary 0,1
+ex: pdf, doc, images, videos etc we can store all these data in s3
+all data which can be converted to binary form can be stored in s3
+
+and we need to create a bucket in order to save the data in s3, s3 can have max of 200 bucket, and size of bucket is unlimited.
+size of object : 0kb to 5TB
+we can create bucket for diffrent teams, environment or application ot type.
+
+we need to have obj level policy and bucket level policy.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

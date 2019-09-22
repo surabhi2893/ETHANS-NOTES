@@ -1,0 +1,165 @@
+Jenkins
+
+Jenkins installation steps:
+
+sudo yum install -y git java-1.8.0-openjdk-devel aws-cli
+sudo alternatives --config java
+In this command change version of java to the latest version.
+Step 2. Install Apache Maven
+sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+yum install -y apache-maven          ### this step creates a local maven repo.
+mvn --version
+Step 4. Install Jenkins
+wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
+rpm --import http://pkg.jenkins-ci.org/redhat-stable/jenkins-ci.org.key
+
+
+sudo yum install jenkins
+sudo service jenkins start
+sudo chkconfig --add jenkins
+
+
+
+after this http://<ip>:8080
+
+cat the abouve given location, to get the key.
+
+then set the password for the admin user
+username : admin
+passwrord
+
+go to putty type mvn --version
+
+and set the environment varialbles under global tool configuration for maven and java
+
+freestyle is compatible with any language(java, python, etc)
+
+job is created in workspace directories
+
+how may shells are there in linux.
+
+default shell of jenkins is sh.
+
+Maven:  lifecycle : 7 life cycles:
+
+all these goals are case sensitive and must be written in the same way.
+
+1. validate : validates your project
+	do we have all the required files in source code.
+	is our job configured properly.
+2. compile : it compile your source code.
+3. test : execute all the test cases.
+4. package create a package (artifact), it could be in war, ear, zar,...., package gets stored in workspace.(/var/lib/jenkins/workspace)
+5. install : download artifacts to local maven repository (M2 repository)
+6. verify: it verifies the installed artifacts, if it contains all the binaries etc.(m2 me properly install hua hai ya nahi chk karta hai)
+7. deploy: upload artifacts to local maven repository from loval maven repo.
+
+jenkins download all the required files for compile during run time.
+
+**************************
+
+in case if we forget the jenkins password, steps to be followed.
+cd /var/lib/jenkins
+vi config.xml
+
+**************************
+
+all the tool information is stored in POM.xml
+
+tool varies as the code varies.
+in pom.xml me tools information put kartey hai.
+
+all the artifacts are stored in workspace, and maven local repo, in case the jenkins fails, and this is a time of release the package, then the artifct would not be able to reach tomcat.
+so in this case we need one more remote repo where all the artifacts in the remote it jfrog/nexus
+
+/var/lib/jenkins/.m2/repository/com/example/maven-project/maven-project/1.0-SNAPSHOT in this location we can check all the war file, these .war files contains all the artifacts
+
+********************
+
+The default port of tomcat is 8080, 
+in order to connect the jenkins with apache, in order to place the artifact, we need to change the default port of the tomcat in the confi files info is given in the shared files by praksh'
+
+in order to deploy the artifacts in tomcat, we need to have a plug in copy artifact and deploy to container.
+
+jenkins>> manage jenkins > manage plugin >>> copy artifact and deploy to container.
+install without restart.
+
+jar - java archieves
+war - web archieves
+ear - eanterprise archieves.
+
+
+******************************
+
+waterfall, agile and devops difference ??
+what is plugin 
+create a package using ANT and package using Gradle.
+what is the diffrence btwn ear, war, jar and zip. (artifacts files)
+
+create a ci cd pipeline for jboss and wildfly
+
+once the build is done for cd job, http://<ip of tomcat>:8080/webapp
+
+for ant and gradle - pom.xml, plugin, global tool config needs to be done/configured.
+
+Question int - which kind of artifactory is used in our environment, ie war, ear etc..?
+
+****************************
+
+there are three section in a job pre build, build, post build.
+
+integrate findbug and tmd
+
+************************************
+
+when there is any error in the build, and we want to tell the developer that there is an error, via automation, we can use webhook or poll SCM.
+in order to set the the polling time we need to configure it in cron job.
+
+cron job:
+
+min 0-59	hour 0-23	days of month 1-31	month jan-dec	days of week sun - mon
+*			*			*					*				*	take sun as 0
+if there is only star that means all.
+
+
+every quarter 3:45 am, first week sunday
+
+45		3		1-7		1,4,7,10		0	
+						*/3
+
+						
+***************************************************
+
+install the checkstyle plugin in jenkins, and in the build job write checkstyle:checkstyle in the build goal.
+
+*******************************************************
+
+wildfly installation :
+
+export WILDFLY_RELEASE="16.0.0"
+wget https://download.jboss.org/wildfly/$WILDFLY_RELEASE.Final/wildfly-$WILDFLY_RELEASE.Final.tar.gz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
